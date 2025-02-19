@@ -1,15 +1,6 @@
-<!-- resources/views/admin/dashboard.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-100">
+@section('content')
     <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
         <h1 class="text-2xl font-bold text-gray-700">Admin Dashboard</h1>
         <p class="mt-2 text-gray-600">Welcome, {{ Auth::user()->name }} (Admin)</p>
@@ -23,6 +14,4 @@
             </form>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

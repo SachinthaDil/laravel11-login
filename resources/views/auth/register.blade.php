@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Register</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
+@extends('layouts.app')
+
+@section('content')
+<div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
         <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
-        
+
         @if($errors->any())
-            <div class="mb-4 text-red-500">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div class="mb-4 text-red-500">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
 
         <form action="{{ route('member.store') }}" method="POST">
@@ -47,5 +44,5 @@
             Already have an account? <a href="{{ route('login') }}" class="text-blue-500">Login here</a>
         </p>
     </div>
-</body>
-</html>
+</div>
+@endsection

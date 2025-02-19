@@ -11,7 +11,7 @@ class MemberController extends Controller
 {
     public function register()
     {
-        return view('member.register');
+        return view('auth.register');
     }
 
     public function store(Request $request)

@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 // Registration
-Route::get('/register', [MemberController::class, 'register'])->name('member.register');
+Route::get('/register', [MemberController::class, 'register'])->name('auth.register');
 Route::post('/register', [MemberController::class, 'store'])->name('member.store');
 
 // Authentication
@@ -26,3 +30,9 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
